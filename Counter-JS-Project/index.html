@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTER</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="index.js" defer ></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="global-container">
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <div class="nav-item btn-back">
+                        <a href="#"><img src="assets/back.png" width="20%" alt=""/></a>
+                    </div>
+                    <div class="nav-item btn-title">Counter</div>
+                    <div class="nav-item btn-youtube-link">
+                        <a href="#"><img src="assets/youtube.png" width="20%" alt="youtube logo"/></a>
+                    </div>
+                    <div class="nav-item btn-github-link">
+                        <a href="#"><img src="assets/github.png" width="20%" alt="github logo"/></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="body-container">
+                <div id="resultat">0</div>
+                <div class="choice-of-operation">
+                    <button id="incrementation">+</button>
+                    <button id="decrementation">-</button>
+                </div>
+                <div class="choice-value">
+                    <label for="" id="">Incrementation / Decrementation by : </label>
+                    <input type="number" name="select-number" placeholder="0" id="selectValue" min="1" max="10">
+                </div>
+                <div class="btn-validate">
+                    <button id="btn-reset" type="reset">Reset</button>
+                </div>
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+    <script>
+        let incre = document.getElementById('incrementation');
+        let decre = document.getElementById('decrementation');
+        let x = document.getElementById('selectValue');
+        let result = document.getElementById('resultat');
+        let btn = document.getElementById('btn-reset');
+        incre.addEventListener('click', ()=>{
+            result.textContent =+ result.textContent + x.valueAsNumber;
+        })
+        decre.addEventListener('click', ()=>{
+            result.textContent = parseInt(result.textContent) - x.valueAsNumber
+        })
+        btn.addEventListener('click', ()=>{
+            result.textContent = 0;
+        })
+    </script>
+</body>
+</html>
